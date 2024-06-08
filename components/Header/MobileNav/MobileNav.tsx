@@ -30,7 +30,7 @@ function MobileNav({ showBackdrop, setShowBackdrop }: any) {
   return (
     <nav
       className={`${styles.mobileNav} ${showBackdrop ? styles.open : ""} ${
-        theme == "dark" ? "dark" : ""
+        theme == "dark" ? styles.dark : ""
       }`}
     >
       <ul className={styles.mobileNavItems}>

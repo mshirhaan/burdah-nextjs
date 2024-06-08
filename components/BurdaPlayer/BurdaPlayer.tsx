@@ -87,7 +87,7 @@ function BurdaPlayer({
     <div
       className={`${styles.container} ${
         isHidden || !audioUrl ? styles.hidden : ""
-      } ${theme == "dark" ? "dark" : ""}`}
+      } ${theme == "dark" ? styles.dark : ""}`}
     >
       {/* Dropdown for selecting the reciter */}
       <select value={selectedReciter} onChange={handleReciterChange}>
