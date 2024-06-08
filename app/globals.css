@@ -1,107 +1,87 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amiri+Quran&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap");
 
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html,
 body {
-  max-width: 100vw;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
   overflow-x: hidden;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+button {
+  cursor: pointer;
+  border: none;
+}
+
+:root {
+  --primary-color: #598562;
+  --secondary-color: #fff;
+  /* Add more global color variables as needed */
+}
+
+@font-face {
+  font-family: "Uthmanic";
+  src: url("../assets/fonts/Uthmanic.otf") format("truetype");
+  /* You can also specify other font formats (e.g., woff, woff2) here */
+  font-weight: normal;
+  font-style: normal;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: inherit; /* Inherit the color from the parent element */
+  text-decoration: none; /* Remove the underline */
+  /* Add any other custom styles you want */
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.arabic {
+  font-family: "Uthmanic", "Amiri Quran", serif;
+}
+
+.button {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid var(--primary-color); /* Border color */
+  border-radius: 25px; /* Rounded corners */
+  text-decoration: none;
+  color: var(--primary-color); /* Text color */
+  transition: background-color 0.3s; /* Smooth hover effect */
+  margin: 10px; /* Add spacing between buttons */
+  background-color: white;
+}
+
+.buttonDark {
+  background-color: #1f2125;
+  color: #fff;
+}
+
+.button.active {
+  background-color: var(--primary-color); /* Hover background color */
+  color: #fff;
+}
+
+.button:hover {
+  background-color: var(--primary-color); /* Hover background color */
+  color: #fff;
+}
+
+.dark {
+  background-color: #1f2125;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.link:hover {
+  color: var(--primary-color);
+}
+
+.tafseer-heading {
+  text-align: center;
+}
+
+.ala-hadrat {
+  color: #ff0833;
 }
