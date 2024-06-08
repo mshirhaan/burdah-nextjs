@@ -6,6 +6,7 @@ import Backdrop from "@/components/Backdrop/Backdrop";
 import Hero from "@/components/Hero/Hero";
 import Chapters from "@/components/Chapters/Chapters";
 import Footer from "@/components/Footer/Footer";
+import Head from "next/head";
 
 export default function Home() {
   const [showBackdrop, setShowBackdrop] = useState(false);
@@ -18,6 +19,9 @@ export default function Home() {
 
   return (
     <div>
+      <Head>
+        <link rel="shortcut icon" href="/images/favicon.ico" />
+      </Head>
       <Header
         showBackdrop={showBackdrop}
         setShowBackdrop={showBackDropHandler}
