@@ -22,7 +22,7 @@ button {
 
 @font-face {
   font-family: "Uthmanic";
-  src: url("../assets/fonts/Uthmanic.otf") format("truetype");
+  src: url("/fonts/Uthmanic.otf") format("truetype");
   /* You can also specify other font formats (e.g., woff, woff2) here */
   font-weight: normal;
   font-style: normal;
