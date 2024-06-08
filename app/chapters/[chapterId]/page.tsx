@@ -91,7 +91,7 @@ const Chapter: React.FC<{ params: { chapterId: string } }> = ({ params }) => {
             para={para}
             audioMapping={reciter.audioMapping["chapter" + chapterId][index]}
             setPlaybackTime={handleSetAudioRefTime}
-            togglePlay={() => {}}
+            togglePlay={togglePlay}
             isPlaying={isPlaying}
             currentTime={audioTime}
             key={para.id}
