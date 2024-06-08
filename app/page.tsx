@@ -28,8 +28,9 @@ export default function Home() {
         />
         <meta
           name="keywords"
-          content="Qaseeda Burda, Qasidat al-Burdah, Imam al-Busiri, Islamic poetry, Prophet Muhammad, spiritual poems, Islamic literature, religious poems, devotional poetry, translations, tafseer, audio recitations"
+          content="Qaseeda, Qasida, Qaseeda Burda, Qasida Burda, Qasida Burdah, Qaseeda Burdah, Burdah, Burda, Qasidat al-Burdah, Imam al-Busiri, Islamic poetry, Prophet Muhammad, spiritual poems, Islamic literature, religious poems, devotional poetry, translations, tafseer, audio recitations"
         />
+        <meta name="author" content="QaseedaBurda.com" />
         <meta name="author" content="QaseedaBurda.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
