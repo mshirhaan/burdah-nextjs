@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description:
     "Explore Qaseeda Burda with English translations, detailed tafseer explanations, and synchronized audio recitations. Enjoy a rich, interactive experience of this timeless Islamic poem.",
   keywords:
-    "Qaseeda, Qasida, Qaseeda Burda, Qasida Burda, Qasida Burdah, Qaseeda Burdah, Burdah, Burda, Qasidat al-Burdah, Imam al-Busiri, Islamic poetry, Prophet Muhammad, spiritual poems, Islamic literature, religious poems, devotional poetry, translations, tafseer, audio recitations",
+    "Qaseeda, Qasida, Qaseeda Burda, Qasida Burda, Qasida Burdah, Qaseeda Burdah, Burdah, Burda, Qasidat al-Burdah, Imam al-Busiri, Islamic poetry, Prophet Muhammad, spiritual poems, Islamic literature, religious poems, devotional poetry, translations, tafseer, audio recitations, Qaseeda Burda translation, Qaseeda Burda tafseer, Qaseeda Burda audio recitations, Qaseeda Burdah translation, Qaseeda Burdah tafseer, Qaseeda Burdah audio recitations, Qasida Burdah translation, Qasida Burdah tafseer, Qasida Burdah audio recitations",
   authors: [{ name: "Imam al-Busiri" }],
 
   openGraph: {
