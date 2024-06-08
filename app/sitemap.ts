@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: "https://qaseedaburda.com",
       lastModified: new Date(),
-      changeFrequency: "yearly",
+      changeFrequency: "never",
       priority: 1,
     },
   ];
