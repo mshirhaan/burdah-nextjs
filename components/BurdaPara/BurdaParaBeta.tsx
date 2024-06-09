@@ -7,8 +7,8 @@ import Modal from "../Modal/Modal";
 import { useTheme } from "@/context/ThemeContext";
 
 import * as Tooltip from "@radix-ui/react-tooltip";
-import { PlusIcon } from "@radix-ui/react-icons";
 import "./styles.css";
+import ThemeIcon from "../ThemeIcon/ThemeIcon";
 const BurdaPara = ({
   para,
   audioMapping,
@@ -69,7 +69,7 @@ const BurdaPara = ({
           >
             {para.id}
           </span>
-          {isHighlighted && isPlaying ? <GiPauseButton /> : <SlControlPlay />}
+          {isHighlighted && isPlaying ? <ThemeIcon Icon={GiPauseButton} /> : <ThemeIcon Icon={SlControlPlay} />}
         </button>
         <Tooltip.Provider>
           <Tooltip.Root>
@@ -80,7 +80,7 @@ const BurdaPara = ({
                   openTafseerModal();
                 }}
               >
-                <PiBookOpenLight />
+                <ThemeIcon Icon={PiBookOpenLight} />
               </button>
             </Tooltip.Trigger>
             <Tooltip.Portal>
