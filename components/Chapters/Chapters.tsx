@@ -5,23 +5,6 @@ import { useTheme } from "@/context/ThemeContext";
 const Chapters = () => {
   const { theme } = useTheme();
 
-  const chapters = [
-    "Chapter 1: Title 1",
-    "Chapter 2: Title 2",
-    "Chapter 3: Title 3",
-    "Chapter 4: Title 4",
-    "Chapter 5: Title 5",
-    "Chapter 6: Title 6",
-    "Chapter 7: Title 7",
-    "Chapter 8: Title 8",
-    "Chapter 9: Title 9",
-    "Chapter 10: Title 10",
-  ];
-
-  const metaDescription = `Explore the chapters of Qaseeda Burda: ${chapters.join(
-    ", "
-  )}.`;
-
   return (
     <div id="chapters" className={styles.container}>
       <div className={styles.chaptersDescription}>
