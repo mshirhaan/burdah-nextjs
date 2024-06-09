@@ -2,7 +2,7 @@
 
 import Backdrop from "@/components/Backdrop/Backdrop";
 import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/Header";
+import Header from "@/components/Header/HeaderBeta";
 import { useTheme } from "@/context/ThemeContext";
 import { useState } from "react";
 
