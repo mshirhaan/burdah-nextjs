@@ -1,6 +1,6 @@
 .mobileNav {
   display: flex;
-  align-items: center;
+  overflow: scroll;
   justify-content: center;
   position: fixed;
   z-index: 101;
