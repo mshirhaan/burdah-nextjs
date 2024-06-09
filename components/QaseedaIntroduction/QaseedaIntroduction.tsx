@@ -6,7 +6,7 @@ const QaseedaIntroduction = () => {
       <section>
         <h2>Introduction</h2>
         <p>
-          The Burdah, or the Prophet's{" "}
+          The Burdah, or the Prophet&apos;s{" "}
           <span lang="ar" dir="rtl">
             صلى الله عليه وسلم
           </span>{" "}
@@ -54,9 +54,9 @@ const QaseedaIntroduction = () => {
             صلى الله عليه وسلم
           </span>{" "}
           in the blessed court last night. The news of this spread far and wide.
-          Hence, the Qasidah came to be called Qasidah tu'l Burdah and received
-          veneration among all Muslims as a Qasidah especially approved by the
-          Beloved Prophet{" "}
+          Hence, the Qasidah came to be called Qasidah tu&apos;l Burdah and
+          received veneration among all Muslims as a Qasidah especially approved
+          by the Beloved Prophet{" "}
           <span lang="ar" dir="rtl">
             صلى الله عليه وسلم
           </span>
@@ -65,8 +65,8 @@ const QaseedaIntroduction = () => {
         <p>
           Its verses are often memorised and inscribed on the walls of public
           buildings. It is congregationally recited in the majalis (spiritual
-          gatherings) of the Zaakireen (those who remember Allah Ta'ala) all
-          over the world. It cures diseases as well as purifies hearts if
+          gatherings) of the Zaakireen (those who remember Allah Ta&apos;ala)
+          all over the world. It cures diseases as well as purifies hearts if
           recited with love and devotion.
         </p>
       </section>
