@@ -24,7 +24,7 @@
 }
 
 .toggleButtonBarDark {
-  background: black;
+  background: var(--primary-color);
 }
 
 .leftCrossBar {

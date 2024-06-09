@@ -4,11 +4,12 @@ import { IconType } from "react-icons";
 
 type Props = {
   Icon: IconType;
+  color?: string;
 };
 
-const ThemeIcon = ({ Icon }: Props) => {
+const ThemeIcon = ({ Icon, color }: Props) => {
   const { theme } = useTheme();
-  return <Icon color={theme === "dark" ? "white" : "black"} />;
+  return <Icon color={color || (theme === "dark" ? "white" : "black")} />;
 };
 
 export default ThemeIcon;

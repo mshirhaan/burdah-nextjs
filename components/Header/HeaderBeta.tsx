@@ -50,7 +50,7 @@ function Header({ showBackdrop, setShowBackdrop, theme, toggleTheme }: any) {
           onClick={toggleTheme}
         >
           {theme == "light" ? (
-            <ThemeIcon Icon={MdOutlineWbSunny} />
+            <ThemeIcon Icon={MdOutlineWbSunny} color="#598562" />
           ) : (
             <ThemeIcon Icon={FiMoon} />
           )}
