@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import styles from "./BurdaPara.module.css";
+import styles from "./BurdaParaBeta.module.css";
 import { SlControlPlay } from "react-icons/sl";
 import { GiPauseButton } from "react-icons/gi";
 import { PiBookOpenLight } from "react-icons/pi";
@@ -63,13 +63,17 @@ const BurdaPara = ({
           }`}
         >
           <span
-            className={`${
+            className={`${styles.paraNumber} ${
               theme == "dark" ? styles.whiteText : styles.darkText
             }`}
           >
             {para.id}
           </span>
-          {isHighlighted && isPlaying ? <ThemeIcon Icon={GiPauseButton} /> : <ThemeIcon Icon={SlControlPlay} />}
+          {isHighlighted && isPlaying ? (
+            <ThemeIcon Icon={GiPauseButton} />
+          ) : (
+            <ThemeIcon Icon={SlControlPlay} />
+          )}
         </button>
         <Tooltip.Provider>
           <Tooltip.Root>
@@ -84,9 +88,14 @@ const BurdaPara = ({
               </button>
             </Tooltip.Trigger>
             <Tooltip.Portal>
-              <Tooltip.Content className={`${theme == "dark" ? "dark" : ""} TooltipContent`} sideOffset={5}>
+              <Tooltip.Content
+                className={`${theme == "dark" ? "dark" : ""} TooltipContent`}
+                sideOffset={5}
+              >
                 Tafseer
-                <Tooltip.Arrow className={`${theme == "dark" ? "dark" : ""} TooltipArrow`} />
+                <Tooltip.Arrow
+                  className={`${theme == "dark" ? "dark" : ""} TooltipArrow`}
+                />
               </Tooltip.Content>
             </Tooltip.Portal>
           </Tooltip.Root>
