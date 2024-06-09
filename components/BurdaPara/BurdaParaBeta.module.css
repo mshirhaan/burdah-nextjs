@@ -1,7 +1,7 @@
 .container {
   padding: 10px 100px;
   font-size: 2rem;
-  border-bottom: 1px ridge gray;
+  border-bottom: 1px solid #ebeef0;
   font-family: "Montserrat", sans-serif;
   position: relative;
 }
