@@ -1,0 +1,9 @@
+.container {
+  padding: 1rem;
+  background-color: #253d2a;
+  color: white;
+}
+
+.container h2 {
+  text-align: center;
+}
