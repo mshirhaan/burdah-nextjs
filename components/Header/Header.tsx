@@ -9,6 +9,7 @@ import { BsBrightnessHigh } from "react-icons/bs";
 import { FiMoon } from "react-icons/fi";
 import Link from "next/link";
 import Image from "next/image";
+import ThemeIcon from "../ThemeIcon/ThemeIcon";
 
 function Header({ showBackdrop, setShowBackdrop, theme, toggleTheme }: any) {
   const navLinks = [{ title: "Home", link: "/" }];
@@ -58,7 +59,11 @@ function Header({ showBackdrop, setShowBackdrop, theme, toggleTheme }: any) {
           }`}
           onClick={toggleTheme}
         >
-          {theme == "light" ? <BsBrightnessHigh /> : <FiMoon />}
+          {theme == "light" ? (
+            <ThemeIcon Icon={BsBrightnessHigh} />
+          ) : (
+            <ThemeIcon Icon={FiMoon} />
+          )}
         </button>
         <Hamburger
           showBackdrop={showBackdrop}
