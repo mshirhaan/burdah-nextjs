@@ -12,7 +12,7 @@
 
 .buttonGroup {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   top: 50%;
   transform: translateY(-50%);
   left: 10%;
