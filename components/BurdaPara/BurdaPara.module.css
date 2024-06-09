@@ -32,7 +32,8 @@
 }
 
 .highlightedDark {
-  background-color: #474747 !important;
+  /* background-color: #474747 !important; */
+  background-color: #212529 !important;
   color: white;
 }
 
