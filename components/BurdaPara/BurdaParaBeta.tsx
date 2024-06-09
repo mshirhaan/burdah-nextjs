@@ -47,7 +47,7 @@ const BurdaPara = ({
   return (
     <div
       ref={containerRef}
-      className={`${styles.container} ${theme == "dark" ? "dark" : ""} ${
+      className={`${styles.container} ${theme == "dark" ? `${styles.dark} dark` : ""} ${
         isHighlighted && theme == "dark" ? styles.highlightedDark : ""
       } ${isHighlighted && theme != "dark" ? styles.highlighted : ""} `}
     >

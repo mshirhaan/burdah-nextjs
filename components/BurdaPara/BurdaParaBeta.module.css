@@ -6,6 +6,10 @@
   position: relative;
 }
 
+.container.dark {
+  border-bottom: 1px solid #464b50;
+}
+
 .buttonGroup {
   display: flex;
   align-items: flex-start;
@@ -33,7 +37,6 @@
 }
 
 .highlightedDark {
-  /* background-color: #474747 !important; */
   background-color: #212529 !important;
   color: white;
 }
