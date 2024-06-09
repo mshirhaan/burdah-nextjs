@@ -79,8 +79,10 @@ function BurdaPlayer({
     const minutes = Math.floor((timeInSeconds % 3600) / 60);
     const seconds = Math.floor(timeInSeconds % 60);
 
-    return `${hours}:${minutes}:${seconds}`;
-    // return timeInSeconds.toFixed(0) + "";
+    const paddedMinutes = minutes.toString().padStart(2, "0");
+    const paddedSeconds = seconds.toString().padStart(2, "0");
+
+    return `${hours}:${paddedMinutes}:${paddedSeconds}`;
   };
 
   return (
@@ -122,9 +124,9 @@ function BurdaPlayer({
         ></progress>
       </div>
       <div className={styles.timer}>
-        <span>Current Time: {formatTime(currentTime)}</span>
+        <span>{formatTime(currentTime)}</span>
         <span> / </span>
-        <span>Duration: {formatTime(audioRef.current?.duration || 0)}</span>
+        <span>{formatTime(audioRef.current?.duration || 0)}</span>
       </div>
     </div>
   );
