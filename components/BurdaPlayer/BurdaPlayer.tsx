@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import styles from "./BurdaPlayer.module.css";
 import { FaPlay, FaPause, FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 import { useTheme } from "@/context/ThemeContext";
+import ThemeIcon from "../ThemeIcon/ThemeIcon";
 
 function BurdaPlayer({
   setPlaybackTime,
@@ -107,13 +108,13 @@ function BurdaPlayer({
           onClick={togglePlay}
           className={`${theme == "dark" ? "dark" : ""}`}
         >
-          {isPlaying ? <FaPause /> : <FaPlay />}
+          {isPlaying ? <ThemeIcon Icon={FaPause} /> : <ThemeIcon Icon={FaPlay} />}
         </button>
         <button
           onClick={toggleMute}
           className={`${theme == "dark" ? "dark" : ""}`}
         >
-          {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}{" "}
+          {isMuted ? <ThemeIcon Icon={FaVolumeMute} /> : <ThemeIcon Icon={FaVolumeUp} />}{" "}
           {/* Toggle mute/unmute icon */}
         </button>
         <progress
