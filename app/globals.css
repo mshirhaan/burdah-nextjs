@@ -85,3 +85,8 @@ a {
 .ala-hadrat {
   color: #ff0833;
 }
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent ;
+}
