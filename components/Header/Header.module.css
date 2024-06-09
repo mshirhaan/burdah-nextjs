@@ -53,6 +53,7 @@
   font-size: 2rem;
   background: none;
   margin-right: 30px;
+  display: flex;
 }
 
 .darkBtn {
