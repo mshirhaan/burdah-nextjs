@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import BurdaPara from "../BurdaPara/BurdaPara";
+import BurdaPara from "../BurdaPara/BurdaParaBeta";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import BurdaPlayer from "../BurdaPlayer/BurdaPlayer";
