@@ -3,7 +3,7 @@ import styles from "./Header.module.css";
 import logoDarkImg from "@/public/images/logo.svg";
 import Hamburger from "../HamburgerButton/Hamburger";
 import MobileNav from "./MobileNav/MobileNav";
-import { BsBrightnessHigh } from "react-icons/bs";
+import { MdOutlineWbSunny } from "react-icons/md";
 import { FiMoon } from "react-icons/fi";
 import Link from "next/link";
 import Image from "next/image";
@@ -50,7 +50,7 @@ function Header({ showBackdrop, setShowBackdrop, theme, toggleTheme }: any) {
           onClick={toggleTheme}
         >
           {theme == "light" ? (
-            <ThemeIcon Icon={BsBrightnessHigh} />
+            <ThemeIcon Icon={MdOutlineWbSunny} />
           ) : (
             <ThemeIcon Icon={FiMoon} />
           )}
