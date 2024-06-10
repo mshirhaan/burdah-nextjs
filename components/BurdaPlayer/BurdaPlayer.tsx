@@ -86,10 +86,6 @@ function BurdaPlayer({
     }
   }, []);
 
-  useEffect(() => {
-    setMaxValue(audioRef.current?.duration);
-  }, [audioRef.current]);
-
   // Function to format time in HH:MM:SS format
   const formatTime = (timeInSeconds: number): string => {
     const hours = Math.floor(timeInSeconds / 3600);
@@ -101,8 +97,6 @@ function BurdaPlayer({
 
     return `${hours}:${paddedMinutes}:${paddedSeconds}`;
   };
-
-  const [maxValue, setMaxValue] = useState(0);
 
   return (
     <div
@@ -154,7 +148,7 @@ function BurdaPlayer({
           className="SliderRoot"
           value={[currentTime]}
           onValueChange={handleSliderChange}
-          max={maxValue}
+          max={100}
           step={1}
         >
           <Slider.Track className="SliderTrack">
