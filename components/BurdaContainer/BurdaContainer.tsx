@@ -96,7 +96,6 @@ const BurdaContainer = ({ chapterId }: BurdaContainerProps) => {
             togglePlay={togglePlay}
             isPlaying={isPlaying}
             currentTime={audioTime}
-            key={para.id}
           />
         </React.Fragment>
       ))}

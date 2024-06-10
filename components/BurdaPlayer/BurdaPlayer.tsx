@@ -70,7 +70,7 @@ function BurdaPlayer({
     }
   };
 
-  const handleSliderChange = (value: any) => {
+  const handleSliderChange = (value: [number]) => {
     const audio = audioRef.current;
     if (audio) {
       audio.currentTime = value[0];
@@ -85,6 +85,11 @@ function BurdaPlayer({
       });
     }
   }, []);
+
+  useEffect(() => {
+    setMaxValue(audioRef.current?.duration);
+  }, [audioRef.current]);
+
   // Function to format time in HH:MM:SS format
   const formatTime = (timeInSeconds: number): string => {
     const hours = Math.floor(timeInSeconds / 3600);
@@ -96,6 +101,8 @@ function BurdaPlayer({
 
     return `${hours}:${paddedMinutes}:${paddedSeconds}`;
   };
+
+  const [maxValue, setMaxValue] = useState(0);
 
   return (
     <div
@@ -136,18 +143,18 @@ function BurdaPlayer({
           )}{" "}
           {/* Toggle mute/unmute icon */}
         </button>
-        <progress
+        {/* <progress
           max={audioRef.current?.duration || 0}
           value={currentTime}
           style={{ width: "100%", cursor: "pointer" }}
           onClick={handleProgressBarClick}
-        ></progress>
+        ></progress> */}
 
         <Slider.Root
           className="SliderRoot"
           value={[currentTime]}
           onValueChange={handleSliderChange}
-          max={audioRef.current?.duration || 0}
+          max={maxValue}
           step={1}
         >
           <Slider.Track className="SliderTrack">
