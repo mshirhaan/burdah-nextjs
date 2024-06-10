@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "./BurdaPlayer.module.css";
 import { useTheme } from "@/context/ThemeContext";
+import { useRouter } from "next/navigation";
+import { useAutoPlay } from "@/context/AutoPlayContext";
 
 function BurdaPlayer({
   setPlaybackTime,
@@ -12,9 +14,12 @@ function BurdaPlayer({
   reciters,
   handleReciterChange,
   selectedReciter,
+  chapterId,
 }: any) {
   const [isHidden, setIsHidden] = useState(false);
   const { theme } = useTheme();
+  const { autoPlay } = useAutoPlay();
+  const router = useRouter();
 
   const isScrollAtEnd = () => {
     const windowHeight = window.innerHeight;
@@ -48,6 +53,12 @@ function BurdaPlayer({
     if (audioRef.current) {
       audioRef.current.addEventListener("timeupdate", () => {
         setPlaybackTime(audioRef.current?.currentTime || 0);
+      });
+
+      audioRef.current.addEventListener("ended", function () {
+        if (autoPlay && +chapterId < 10) {
+          router.push("/chapters/" + (+chapterId + 1));
+        }
       });
     }
   }, []);

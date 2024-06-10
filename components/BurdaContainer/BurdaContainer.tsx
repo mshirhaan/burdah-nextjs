@@ -124,6 +124,7 @@ const BurdaContainer = ({ chapterId }: BurdaContainerProps) => {
         reciters={reciterNames}
         handleReciterChange={handleReciterChange}
         selectedReciter={selectedReciter}
+        chapterId={chapterId}
       />
     </div>
   );

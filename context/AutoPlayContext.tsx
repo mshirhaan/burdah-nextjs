@@ -3,8 +3,10 @@
 import React, { createContext, useContext, useState } from "react";
 
 interface AutoPlayContextType {
-  AutoPlay: boolean;
+  autoPlay: boolean;
+  isLastPlaying: boolean;
   toggleAutoPlay: () => void;
+  setLastPlaying: (flag: boolean) => void;
 }
 
 const AutoPlayContext = createContext<AutoPlayContextType | undefined>(
@@ -26,14 +28,20 @@ interface AutoPlayProviderProps {
 export const AutoPlayProvider: React.FC<AutoPlayProviderProps> = ({
   children,
 }) => {
-  const [AutoPlay, setAutoPlay] = useState<boolean>(false);
-
+  const [autoPlay, setAutoPlay] = useState<boolean>(false);
+  const [isLastPlaying, setIsLastPlaying] = useState<boolean>(false);
   const toggleAutoPlay = () => {
     setAutoPlay((prevAutoPlay) => !prevAutoPlay);
   };
 
+  const setLastPlaying = (flag: boolean) => {
+    setIsLastPlaying(flag);
+  };
+
   return (
-    <AutoPlayContext.Provider value={{ AutoPlay, toggleAutoPlay }}>
+    <AutoPlayContext.Provider
+      value={{ autoPlay, isLastPlaying, setLastPlaying, toggleAutoPlay }}
+    >
       {children}
     </AutoPlayContext.Provider>
   );
