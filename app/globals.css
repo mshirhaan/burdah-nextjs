@@ -90,3 +90,8 @@ a,
 button {
   -webkit-tap-highlight-color: transparent ;
 }
+audio::-webkit-media-controls-panel{
+  
+  background-color: white;
+ 
+}
