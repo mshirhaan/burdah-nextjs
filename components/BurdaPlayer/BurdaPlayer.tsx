@@ -5,7 +5,6 @@ import { useTheme } from "@/context/ThemeContext";
 import ThemeIcon from "../ThemeIcon/ThemeIcon";
 
 import * as Slider from "@radix-ui/react-slider";
-import "./styles.css";
 
 function BurdaPlayer({
   setPlaybackTime,
@@ -87,16 +86,16 @@ function BurdaPlayer({
   }, []);
 
   // Function to format time in HH:MM:SS format
-  const formatTime = (timeInSeconds: number): string => {
-    const hours = Math.floor(timeInSeconds / 3600);
-    const minutes = Math.floor((timeInSeconds % 3600) / 60);
-    const seconds = Math.floor(timeInSeconds % 60);
+  // const formatTime = (timeInSeconds: number): string => {
+  //   const hours = Math.floor(timeInSeconds / 3600);
+  //   const minutes = Math.floor((timeInSeconds % 3600) / 60);
+  //   const seconds = Math.floor(timeInSeconds % 60);
 
-    const paddedMinutes = minutes.toString().padStart(2, "0");
-    const paddedSeconds = seconds.toString().padStart(2, "0");
+  //   const paddedMinutes = minutes.toString().padStart(2, "0");
+  //   const paddedSeconds = seconds.toString().padStart(2, "0");
 
-    return `${hours}:${paddedMinutes}:${paddedSeconds}`;
-  };
+  //   return `${hours}:${paddedMinutes}:${paddedSeconds}`;
+  // };
 
   return (
     <div
@@ -112,10 +111,10 @@ function BurdaPlayer({
           </option>
         ))}
       </select>
-      <audio ref={audioRef} src={audioUrl} autoPlay={isPlaying}>
+      <audio ref={audioRef} src={audioUrl} autoPlay={isPlaying} controls>
         Your browser does not support the audio element.
       </audio>
-      <div className={styles.player}>
+      {/* <div className={styles.player}>
         <button
           onClick={togglePlay}
           className={`${theme == "dark" ? "dark" : ""}`}
@@ -134,43 +133,16 @@ function BurdaPlayer({
             <ThemeIcon Icon={FaVolumeMute} />
           ) : (
             <ThemeIcon Icon={FaVolumeUp} />
-          )}{" "}
-          {/* Toggle mute/unmute icon */}
+          )}
         </button>
-        {/* <progress
+        <progress
           max={audioRef.current?.duration || 0}
           value={currentTime}
           style={{ width: "100%", cursor: "pointer" }}
           onClick={handleProgressBarClick}
-        ></progress> */}
-
-        <Slider.Root
-          className="SliderRoot"
-          value={[currentTime]}
-          onValueChange={handleSliderChange}
-          max={100}
-          step={1}
-        >
-          <Slider.Track className="SliderTrack">
-            <Slider.Range
-              className={`${
-                theme == "light" ? "DarkSliderRange" : ""
-              } SliderRange`}
-            />
-          </Slider.Track>
-          <Slider.Thumb
-            className={`${
-              theme == "light" ? "DarkSliderThumb" : ""
-            } SliderThumb`}
-            aria-label="Volume"
-          />
-        </Slider.Root>
-      </div>
-      <div className={styles.timer}>
-        <span>{formatTime(currentTime)}</span>
-        <span> / </span>
-        <span>{formatTime(audioRef.current?.duration || 0)}</span>
-      </div>
+        ></progress>
+      </div> */}
+      
     </div>
   );
 }
