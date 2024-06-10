@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
 import localFont from "next/font/local";
+import { AutoPlayProvider } from "@/context/AutoPlayContext";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -44,7 +45,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <AutoPlayProvider>{children}</AutoPlayProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

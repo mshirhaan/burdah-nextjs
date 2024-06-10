@@ -1,10 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "./BurdaPlayer.module.css";
-import { FaPlay, FaPause, FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 import { useTheme } from "@/context/ThemeContext";
-import ThemeIcon from "../ThemeIcon/ThemeIcon";
-
-import * as Slider from "@radix-ui/react-slider";
 
 function BurdaPlayer({
   setPlaybackTime,
@@ -111,7 +107,13 @@ function BurdaPlayer({
           </option>
         ))}
       </select>
-      <audio className={`${theme == "light" ? styles.audioLight : ""}`} ref={audioRef} src={audioUrl} autoPlay={isPlaying} controls>
+      <audio
+        className={`${theme == "light" ? styles.audioLight : ""}`}
+        ref={audioRef}
+        src={audioUrl}
+        autoPlay={isPlaying}
+        controls
+      >
         Your browser does not support the audio element.
       </audio>
       {/* <div className={styles.player}>
@@ -142,7 +144,6 @@ function BurdaPlayer({
           onClick={handleProgressBarClick}
         ></progress>
       </div> */}
-      
     </div>
   );
 }
