@@ -4,6 +4,9 @@ import { FaPlay, FaPause, FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 import { useTheme } from "@/context/ThemeContext";
 import ThemeIcon from "../ThemeIcon/ThemeIcon";
 
+import * as Slider from "@radix-ui/react-slider";
+import "./styles.css";
+
 function BurdaPlayer({
   setPlaybackTime,
   currentTime,
@@ -67,6 +70,14 @@ function BurdaPlayer({
     }
   };
 
+  const handleSliderChange = (value: any) => {
+    const audio = audioRef.current;
+    if (audio) {
+      audio.currentTime = value[0];
+      setPlaybackTime(value[0]);
+    }
+  };
+
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.addEventListener("timeupdate", () => {
@@ -108,21 +119,52 @@ function BurdaPlayer({
           onClick={togglePlay}
           className={`${theme == "dark" ? "dark" : ""}`}
         >
-          {isPlaying ? <ThemeIcon Icon={FaPause} /> : <ThemeIcon Icon={FaPlay} />}
+          {isPlaying ? (
+            <ThemeIcon Icon={FaPause} />
+          ) : (
+            <ThemeIcon Icon={FaPlay} />
+          )}
         </button>
         <button
           onClick={toggleMute}
           className={`${theme == "dark" ? "dark" : ""}`}
         >
-          {isMuted ? <ThemeIcon Icon={FaVolumeMute} /> : <ThemeIcon Icon={FaVolumeUp} />}{" "}
+          {isMuted ? (
+            <ThemeIcon Icon={FaVolumeMute} />
+          ) : (
+            <ThemeIcon Icon={FaVolumeUp} />
+          )}{" "}
           {/* Toggle mute/unmute icon */}
         </button>
-        <progress
+        {/* <progress
           max={audioRef.current?.duration || 0}
           value={currentTime}
           style={{ width: "100%", cursor: "pointer" }}
           onClick={handleProgressBarClick}
-        ></progress>
+        ></progress> */}
+
+        <Slider.Root
+          className="SliderRoot"
+          defaultValue={[50]}
+          value={[currentTime]}
+          onValueChange={handleSliderChange}
+          max={audioRef.current?.duration || 0}
+          step={1}
+        >
+          <Slider.Track className="SliderTrack">
+            <Slider.Range
+              className={`${
+                theme == "light" ? "DarkSliderRange" : ""
+              } SliderRange`}
+            />
+          </Slider.Track>
+          <Slider.Thumb
+            className={`${
+              theme == "light" ? "DarkSliderThumb" : ""
+            } SliderThumb`}
+            aria-label="Volume"
+          />
+        </Slider.Root>
       </div>
       <div className={styles.timer}>
         <span>{formatTime(currentTime)}</span>
