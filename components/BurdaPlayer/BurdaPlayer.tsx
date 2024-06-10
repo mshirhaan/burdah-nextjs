@@ -111,7 +111,7 @@ function BurdaPlayer({
           </option>
         ))}
       </select>
-      <audio ref={audioRef} src={audioUrl} autoPlay={isPlaying} controls>
+      <audio className={`${theme == "light" ? styles.audioLight : ""}`} ref={audioRef} src={audioUrl} autoPlay={isPlaying} controls>
         Your browser does not support the audio element.
       </audio>
       {/* <div className={styles.player}>

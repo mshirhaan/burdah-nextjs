@@ -16,7 +16,7 @@
   justify-content: space-between;
 }
 
-.container audio::-webkit-media-controls-panel {
+.container audio.audioLight::-webkit-media-controls-panel {
   background-color: white;
 }
 
