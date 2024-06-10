@@ -14,7 +14,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+}
 
+.container audio::-webkit-media-controls-panel {
+  background-color: white;
 }
 
 .container select {
@@ -28,7 +31,7 @@
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 /* .player {
