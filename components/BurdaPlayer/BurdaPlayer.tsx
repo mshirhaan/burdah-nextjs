@@ -20,7 +20,7 @@ function BurdaPlayer({
 }: any) {
   const [isHidden, setIsHidden] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   const isScrollAtEnd = () => {
     const windowHeight = window.innerHeight;
@@ -136,16 +136,15 @@ function BurdaPlayer({
           )}{" "}
           {/* Toggle mute/unmute icon */}
         </button>
-        {/* <progress
+        <progress
           max={audioRef.current?.duration || 0}
           value={currentTime}
           style={{ width: "100%", cursor: "pointer" }}
           onClick={handleProgressBarClick}
-        ></progress> */}
+        ></progress>
 
         <Slider.Root
           className="SliderRoot"
-          defaultValue={[50]}
           value={[currentTime]}
           onValueChange={handleSliderChange}
           max={audioRef.current?.duration || 0}
