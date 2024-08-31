@@ -49,7 +49,7 @@ const BurdaContainer = ({ chapterId }: BurdaContainerProps) => {
   const chapter: ChapterObject = getChapter(chapterId);
   const reciterNames: string[] = getReciterNames();
 
-  const [selectedReciter, setSelectedReciter] = useState(reciterNames[0]);
+  const [selectedReciter, setSelectedReciter] = useState(reciterNames[2]);
   const reciter: Reciter = getReciterAudioMapping(selectedReciter);
   const audioUrl = reciter.fullAudioUrls[+chapterId - 1];
 
