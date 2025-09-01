@@ -49,7 +49,22 @@ const BurdaContainer = ({ chapterId }: BurdaContainerProps) => {
   const chapter: ChapterObject = getChapter(chapterId);
   const reciterNames: string[] = getReciterNames();
 
-  const [selectedReciter, setSelectedReciter] = useState(reciterNames[0]);
+  const [selectedReciter, setSelectedReciter] = useState(() => {
+    if (typeof window !== "undefined") {
+      const savedReciter = localStorage.getItem("selectedReciter");
+      return savedReciter && reciterNames.includes(savedReciter)
+        ? savedReciter
+        : reciterNames[0];
+    }
+    return reciterNames[0];
+  });
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("selectedReciter", selectedReciter);
+    }
+  }, [selectedReciter]);
+
   const reciter: Reciter = getReciterAudioMapping(selectedReciter);
   const audioUrl = reciter.fullAudioUrls[+chapterId - 1];
 
