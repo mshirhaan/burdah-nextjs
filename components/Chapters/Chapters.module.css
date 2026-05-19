@@ -1,33 +1,207 @@
 .container {
   display: flex;
-  height: 50vh;
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 4rem;
+  align-items: center;
+  transition: all 0.3s ease;
 }
 
 .chaptersDescription {
-  padding: 20px;
-  width: 50%;
-  text-align: center;
+  width: 35%;
+  text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 1.5rem;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.chaptersButtonList {
+.chaptersDescription h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  background: linear-gradient(135deg, var(--primary-color), #8ab894);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.chaptersDescription p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 0 2rem 0;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.dark .chaptersDescription p {
+  color: #ccc;
+}
+
+.aboutButton {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  display: inline-block;
+  padding: 12px 28px;
+  border: 2px solid var(--primary-color);
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+  background-color: var(--primary-color);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(89, 133, 98, 0.2);
+}
+
+.aboutButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(89, 133, 98, 0.3);
+  color: white;
+}
+
+.chaptersGrid {
+  width: 65%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
   list-style: none;
   padding: 0;
-  width: 50%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
+  margin: 0;
 }
 
-@media (max-width: 40rem) {
+.chapterItem {
+  list-style: none;
+}
+
+.chapterLink {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.dark .chapterLink {
+  background: #252830;
+  border-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+}
+
+.chapterLink:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: 0 12px 20px -8px rgba(89, 133, 98, 0.3);
+}
+
+.dark .chapterLink:hover {
+  border-color: #8ab894;
+  box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.5);
+}
+
+.chapterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.chapterNumber {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  opacity: 0.85;
+  transition: color 0.3s ease;
+}
+
+.dark .chapterNumber {
+  color: #8ab894;
+}
+
+.chapterBadge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+  background: #f1f3f0;
+  padding: 4px 10px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.dark .chapterBadge {
+  color: #bbb;
+  background: #2f333d;
+}
+
+.chapterLink:hover .chapterBadge {
+  background: rgba(89, 133, 98, 0.1);
+  color: var(--primary-color);
+}
+
+.dark .chapterLink:hover .chapterBadge {
+  background: rgba(138, 184, 148, 0.15);
+  color: #8ab894;
+}
+
+.chapterTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #222;
+  margin: 0;
+  text-align: left;
+  transition: color 0.3s ease;
+}
+
+.dark .chapterTitle {
+  color: #ffffff;
+}
+
+.chapterLink:hover .chapterTitle {
+  color: var(--primary-color);
+}
+
+.dark .chapterLink:hover .chapterTitle {
+  color: #8ab894;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
   .container {
-    height: 100vh;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 3rem 1.5rem;
   }
   
+  .chaptersDescription {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .chaptersGrid {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .chaptersGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .chaptersGrid {
+    grid-template-columns: 1fr;
+  }
 }

@@ -18,7 +18,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className={`${theme == "dark" ? "dark" : ""}`}>
       <Header
         showBackdrop={showBackdrop}
         setShowBackdrop={showBackDropHandler}
