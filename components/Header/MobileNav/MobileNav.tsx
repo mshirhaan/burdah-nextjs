@@ -5,12 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 function MobileNav({ showBackdrop, setShowBackdrop }: any) {
-  const navLinks = [
-    { title: "Home", link: "/" },
-    { title: "Credits", link: "/credits" },
-  ];
-  const { theme, toggleTheme } = useTheme();
-
+  const { theme } = useTheme();
   const currentPathname = usePathname();
   const chapterId = currentPathname.split("/")[2];
 
@@ -21,7 +16,6 @@ function MobileNav({ showBackdrop, setShowBackdrop }: any) {
       document.body.style.overflow = "auto";
     }
 
-    // Clean up the class when the component unmounts
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -30,45 +24,70 @@ function MobileNav({ showBackdrop, setShowBackdrop }: any) {
   return (
     <nav
       className={`${styles.mobileNav} ${showBackdrop ? styles.open : ""} ${
-        theme == "dark" ? styles.dark : ""
+        theme === "dark" ? styles.dark : ""
       }`}
     >
-      <ul className={styles.mobileNavItems}>
-        {[...Array(10)].map((_, index) => (
-          <li
-            key={index}
-            id={"" + index}
-            onClick={() => {
-              setShowBackdrop(false);
-            }}
-          >
+      <div className={styles.navContainer}>
+        {/* Header Section */}
+        <div className={styles.navHeader}>
+          <h2 className={styles.navTitle}>Qaseeda Burda</h2>
+          <p className={styles.navSubtitle}>Translations, Tafseer & Recitation</p>
+        </div>
+
+        {/* Divider */}
+        <div className={styles.divider}></div>
+
+        {/* Quick Links */}
+        <div className={styles.section}>
+          <h3 className={styles.sectionTitle}>Navigation</h3>
+          <div className={styles.mainLinks}>
             <Link
-              className={`button ${theme == "dark" ? "buttonDark" : ""}
-              ${index == +chapterId - 1 ? "active" : ""}
-            `}
-              key={index}
-              href={`/chapters/${index + 1}`}
+              href="/"
+              onClick={() => setShowBackdrop(false)}
+              className={`${styles.mainLink} ${
+                currentPathname === "/" ? styles.activeLink : ""
+              }`}
             >
-              Chapter {index + 1}
+              Home
             </Link>
-          </li>
-        ))}
-        {navLinks.map((navLink) => (
-          <Link
-            id={navLink.title}
-            className={`button ${theme == "dark" ? "buttonDark" : ""}
-            ${currentPathname == navLink.link ? "active" : ""}
-            `}
-            key={navLink.title}
-            href={navLink.link}
-            onClick={() => {
-              setShowBackdrop(false);
-            }}
-          >
-            {navLink.title}
-          </Link>
-        ))}
-      </ul>
+            <Link
+              href="/credits"
+              onClick={() => setShowBackdrop(false)}
+              className={`${styles.mainLink} ${
+                currentPathname === "/credits" ? styles.activeLink : ""
+              }`}
+            >
+              Credits
+            </Link>
+          </div>
+        </div>
+
+        {/* Chapters Section */}
+        <div className={styles.section}>
+          <h3 className={styles.sectionTitle}>Chapters</h3>
+          <div className={styles.chaptersGrid}>
+            {[...Array(10)].map((_, index) => {
+              const chNum = index + 1;
+              const active = index === +chapterId - 1;
+              return (
+                <Link
+                  key={index}
+                  href={`/chapters/${chNum}`}
+                  onClick={() => setShowBackdrop(false)}
+                  className={`${styles.chapterGridItem} ${
+                    active ? styles.activeChapter : ""
+                  }`}
+                >
+                  <span className={styles.gridNum}>
+                    {chNum < 10 ? `0${chNum}` : chNum}
+                  </span>
+                  <span className={styles.gridLabel}>Ch {chNum}</span>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </div>
     </nav>
   );
 }
