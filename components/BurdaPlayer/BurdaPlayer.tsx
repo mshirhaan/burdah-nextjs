@@ -10,6 +10,7 @@ function BurdaPlayer({
   audioRef,
   togglePlay,
   isPlaying,
+  setIsPlaying,
   audioUrl,
   reciters,
   handleReciterChange,
@@ -82,6 +83,8 @@ function BurdaPlayer({
         src={audioUrl}
         autoPlay={isPlaying}
         controls
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
       >
         Your browser does not support the audio element.
       </audio>

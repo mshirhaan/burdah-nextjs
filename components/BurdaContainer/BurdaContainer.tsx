@@ -81,10 +81,11 @@ const BurdaContainer = ({ chapterId }: BurdaContainerProps) => {
       }
       if (audioRef.current.paused) {
         audioRef.current.play();
+        setIsPlaying(true);
       } else {
         audioRef.current.pause();
+        setIsPlaying(false);
       }
-      setIsPlaying(!isPlaying);
     }
   };
   const handleSetAudioTime = (timeInSeconds: number) => {
@@ -135,6 +136,7 @@ const BurdaContainer = ({ chapterId }: BurdaContainerProps) => {
         audioRef={audioRef}
         togglePlay={togglePlay}
         isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
         audioUrl={audioUrl}
         reciters={reciterNames}
         handleReciterChange={handleReciterChange}
